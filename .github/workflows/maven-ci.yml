@@ -77,14 +77,7 @@ jobs:
       uses: advanced-security/maven-dependency-submission-action@v3
 
 
-  name: SonarCloud
-  on:
-    push:
-      branches:
-        - main
-    pull_request:
-      types: [opened, synchronize, reopened]
-  jobs:
+  SonarCloud:
     needs: [maven_test]
     build:
       name: Build and analyze
